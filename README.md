@@ -1,2 +1,3 @@
-# playnite-theme-rwl-desktop
-Theme for Playnite desktop mode
+# Rwl
+
+Theme for [Playnite](https://playnite.link/) desktop mode.
