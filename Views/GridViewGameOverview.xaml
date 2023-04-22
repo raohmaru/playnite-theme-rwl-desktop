@@ -55,8 +55,32 @@
                                         </Style.Triggers>
                                     </Style>
                                 </DockPanel.Style>
+                                
+                                <DockPanel DockPanel.Dock="Top"
+                                           Tag="{DynamicResource GridViewShowLogo}">
+                                    <Grid Height="200"
+                                          Margin="10,0,10,15">
+                                        <ContentControl x:Name="ExtraMetadataLoader_LogoLoaderControl"/>
+                                    </Grid>
+                                    <DockPanel.Style>
+                                        <Style TargetType="DockPanel">
+                                            <Setter Property="Visibility" Value="Collapsed" />
+                                            <Style.Triggers>
+                                                <MultiDataTrigger>
+                                                    <MultiDataTrigger.Conditions>
+                                                        <Condition Binding="{PluginStatus Plugin=ExtraMetadataLoader_705fdbca-e1fc-4004-b839-1d040b8b4429, FallbackValue=False}" Value="True" />
+                                                        <Condition Binding="{PluginSettings Plugin=ExtraMetadataLoader, Path=IsLogoAvailable, FallbackValue=False}" Value="True" />
+                                                        <Condition Binding="{Binding RelativeSource={RelativeSource Self}, Path=Tag, FallbackValue=False}" Value="True" />
+                                                    </MultiDataTrigger.Conditions>
+                                                    <Setter Property="Visibility" Value="Visible" />
+                                                </MultiDataTrigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </DockPanel.Style>
+                                </DockPanel>
 
-                                <DockPanel DockPanel.Dock="Top">
+                                <DockPanel DockPanel.Dock="Top"
+                                           Tag="{DynamicResource GridViewShowLogo}">
                                     <Image Name="PART_ImageIcon" DockPanel.Dock="Left" MaxHeight="32" MaxWidth="32"
                                            RenderOptions.BitmapScalingMode="Fant" Margin="0,0,10,0" />
                                     <TextBlock Name="PART_TextDisplayName" FontSize="{DynamicResource FontSizeLarger}"
@@ -66,6 +90,21 @@
                                             <DropShadowEffect ShadowDepth="3"/>
                                         </TextBlock.Effect>
                                     </TextBlock>
+                                    <DockPanel.Style>
+                                        <Style TargetType="DockPanel">
+                                            <Setter Property="Visibility" Value="Visible" />
+                                            <Style.Triggers>
+                                                <MultiDataTrigger>
+                                                    <MultiDataTrigger.Conditions>
+                                                        <Condition Binding="{PluginStatus Plugin=ExtraMetadataLoader_705fdbca-e1fc-4004-b839-1d040b8b4429, FallbackValue=False}" Value="True" />
+                                                        <Condition Binding="{PluginSettings Plugin=ExtraMetadataLoader, Path=IsLogoAvailable, FallbackValue=False}" Value="True" />
+                                                        <Condition Binding="{Binding RelativeSource={RelativeSource Self}, Path=Tag, FallbackValue=False}" Value="True" />
+                                                    </MultiDataTrigger.Conditions>
+                                                    <Setter Property="Visibility" Value="Collapsed" />
+                                                </MultiDataTrigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </DockPanel.Style>
                                 </DockPanel>
 
                                 <Grid DockPanel.Dock="Top" Margin="0,10,0,10" Background="Transparent">

@@ -1,0 +1,5 @@
+Constants:
+    - "Details View"
+    - DetailsViewShowLogo: 'Show game logo (requires Extra Metadata Loader extension)'
+    - "Grid View Details"
+    - GridViewShowLogo: 'Show game logo (requires Extra Metadata Loader extension)'

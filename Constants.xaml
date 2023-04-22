@@ -29,7 +29,7 @@
     <Color x:Key="PopupBorderColor">#3e6184</Color>
     <Color x:Key="BackgroundToneColor">#2C3A67</Color>
     <Color x:Key="GridItemBackgroundColor">#151e3d</Color>
-    <Color x:Key="PanelSeparatorColor">#662C3A67</Color>
+    <Color x:Key="PanelSeparatorColor">#FF2C3A67</Color>
     <Color x:Key="WindowPanelSeparatorColor">#3355CDFF</Color>
     <Color x:Key="DataChangeNotifColor">#ffa500</Color>
 
@@ -68,4 +68,9 @@
         <GradientStop Color="#202b4d" Offset="0"/>
         <GradientStop Color="{DynamicResource MainColorDark}" Offset="0.4"/>
     </LinearGradientBrush>
+    
+    <!--region ThemeModifier variables-->
+    <sys:Boolean x:Key="DetailsViewShowLogo">true</sys:Boolean>
+    <sys:Boolean x:Key="GridViewShowLogo">true</sys:Boolean>
+    <!--region end-->
 </ResourceDictionary>
