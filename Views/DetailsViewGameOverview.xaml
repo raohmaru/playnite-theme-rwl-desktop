@@ -94,11 +94,13 @@
                                             <Button Name="PART_ButtonContextAction"
                                                     Width="150" Height="40" />
                                             <Button Name="PART_ButtonMoreActions"
-                                                    Content="&#xEFA2;" FontFamily="{DynamicResource FontIcoFont}"
-                                                    Width="40" Height="40" Margin="10,0,0,0" />
+                                                    Width="40" Height="40" Margin="10,0,0,0" 
+                                                    Content="&#xEA67;"
+                                                    FontFamily="{DynamicResource FontIcoFont}" FontSize="{DynamicResource FontSizeLarger}" />
                                             <Button x:Name="PART_ButtonEditGame"
                                                     Width="40" Height="40" Margin="10,0,0,0"
-                                                    Content="&#xeded;" FontFamily="{DynamicResource FontIcoFont}"/>
+                                                    Content="&#xEF3A;"
+                                                    FontFamily="{DynamicResource FontIcoFont}" FontSize="{DynamicResource FontSizeLarger}" />
                                         </StackPanel>
                                     </StackPanel>
                                     <ContentControl x:Name="LibraryManagement_PluginFeaturesIconList" Height="35" Margin="10,0,0,0"
