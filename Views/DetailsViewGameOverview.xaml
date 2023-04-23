@@ -35,12 +35,14 @@
                                     <RowDefinition Height="*"/>
                                 </Grid.RowDefinitions>
                             
-                                <StackPanel Grid.Row="0" Name="DetailsTop" VerticalAlignment="Center"
+                                <StackPanel Grid.Row="0" Name="DetailsTop"
                                             Tag="{DynamicResource DetailsViewShowLogo}">
                                     <Grid Name="HeaderImagesGrid" Height="{Settings CalculatedGameDetailsIndentation}">
                                         <ContentControl x:Name="ExtraMetadataLoader_LogoLoaderControl"
                                                         MaxWidth="500"
-                                                        MaxHeight="{Settings CalculatedGameDetailsIndentation}"/>
+                                                        MaxHeight="{Settings CalculatedGameDetailsIndentation}"
+                                                        VerticalAlignment="Bottom"
+                                                        Margin="0,0,0,40"/>
                                     </Grid>
                                     <StackPanel.Style>
                                         <Style TargetType="StackPanel">
@@ -89,22 +91,11 @@
                                             <Button Name="PART_ButtonContextAction"
                                                     Width="150" Height="40" />
                                             <Button Name="PART_ButtonMoreActions"
-                                                    Content="{DynamicResource LOCMoreAction}"
-                                                    Width="150" Height="40" Margin="10,0,0,0" />
+                                                    Content="&#xEFA2;" FontFamily="{DynamicResource FontIcoFont}"
+                                                    Width="40" Height="40" Margin="10,0,0,0" />
                                             <Button x:Name="PART_ButtonEditGame"
-                                                    Margin="10,0,0,0" Height="40" Focusable="False"
-                                                    Content="&#xeded;" FontFamily="{DynamicResource FontIcoFont}">
-                                                <Button.Style>
-                                                    <Style TargetType="Button" BasedOn="{StaticResource {x:Type Button}}">
-                                                        <Setter Property="Visibility" Value="Hidden" />
-                                                        <Style.Triggers>
-                                                            <DataTrigger Binding="{Binding IsMouseOver, RelativeSource={RelativeSource AncestorType=DockPanel}}"  Value="True">
-                                                                <Setter Property="Visibility" Value="Visible" />
-                                                            </DataTrigger>
-                                                        </Style.Triggers>
-                                                    </Style>
-                                                </Button.Style>
-                                            </Button>
+                                                    Width="40" Height="40" Margin="10,0,0,0"
+                                                    Content="&#xeded;" FontFamily="{DynamicResource FontIcoFont}"/>
                                         </StackPanel>
                                     </StackPanel>
                                 </DockPanel>
