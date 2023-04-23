@@ -33,6 +33,7 @@
                                 <Grid.RowDefinitions>
                                     <RowDefinition Height="{Settings CalculatedGameDetailsIndentation}"/>
                                     <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
                                     <RowDefinition Height="*"/>
                                 </Grid.RowDefinitions>
                             
@@ -62,24 +63,30 @@
                                     </StackPanel.Style>
                                 </StackPanel>
 
-                                <DockPanel Margin="0,20,0,15" MaxWidth="1024" Grid.Row="1"
+                                <DockPanel Margin="0,20,0,0" MaxWidth="1024" Grid.Row="1"
+                                           VerticalAlignment="Bottom" DockPanel.Dock="Left"
+                                           Background="Transparent">
+                                    <DockPanel>
+                                        <Image Name="PART_ImageIcon" MaxHeight="48" MaxWidth="48"
+                                                DockPanel.Dock="Left" Margin="0,0,10,0"
+                                                VerticalAlignment="Center"
+                                                RenderOptions.BitmapScalingMode="Fant" />
+                                        <TextBlock Name="PART_TextDisplayName" FontFamily="{DynamicResource FontFamily}"
+                                                    DockPanel.Dock="Left"
+                                                    FontSize="{DynamicResource FontSizeLargest}" Margin="0,0,10,0" TextWrapping="Wrap"
+                                                    VerticalAlignment="Center"
+                                                    Foreground="{DynamicResource TextBrush}">
+                                            <TextBlock.Effect>
+                                                <DropShadowEffect ShadowDepth="3" RenderingBias="Quality"/>
+                                            </TextBlock.Effect>
+                                        </TextBlock>
+                                    </DockPanel>
+                                </DockPanel>
+
+                                <DockPanel Margin="0,0,0,15" MaxWidth="1024" Grid.Row="2"
+                                           LastChildFill="False"
                                            Background="Transparent">
                                     <StackPanel VerticalAlignment="Bottom" DockPanel.Dock="Left">
-                                        <DockPanel>
-                                            <Image Name="PART_ImageIcon" MaxHeight="48" MaxWidth="48"
-                                                    DockPanel.Dock="Left" Margin="0,0,10,0"
-                                                    VerticalAlignment="Center"
-                                                    RenderOptions.BitmapScalingMode="Fant" />
-                                            <TextBlock Name="PART_TextDisplayName" FontFamily="{DynamicResource FontFamily}"
-                                                        DockPanel.Dock="Left"
-                                                        FontSize="{DynamicResource FontSizeLargest}" Margin="0,0,10,0" TextWrapping="Wrap"
-                                                        VerticalAlignment="Center"
-                                                        Foreground="{DynamicResource TextBrush}">
-                                                <TextBlock.Effect>
-                                                    <DropShadowEffect ShadowDepth="3" RenderingBias="Quality"/>
-                                                </TextBlock.Effect>
-                                            </TextBlock>
-                                        </DockPanel>
                                         <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top"
                                                     Orientation="Horizontal" Margin="0,15,0,0">
                                             <Button Name="PART_ButtonPlayAction"
@@ -94,9 +101,13 @@
                                                     Content="&#xeded;" FontFamily="{DynamicResource FontIcoFont}"/>
                                         </StackPanel>
                                     </StackPanel>
+                                    <ContentControl x:Name="LibraryManagement_PluginFeaturesIconList" Height="35" Margin="10,0,0,0"
+                                                    DockPanel.Dock="Right"
+                                                    VerticalAlignment="Bottom" Opacity="0.85"
+                                                    Visibility="{PluginSettings Plugin=LibraryManagement, Path=EnableIntegrationFeatures, FallbackValue=Collapsed, Converter={StaticResource BooleanToVisibilityConverter}}" />
                                 </DockPanel>
 
-                                <DockPanel MaxWidth="1024" Grid.Row="2">
+                                <DockPanel MaxWidth="1024" Grid.Row="3">
                                     <StackPanel DockPanel.Dock="Left" Width="300"
                                                 Margin="0,0,0,0">
                                         <StackPanel.Resources>
@@ -327,7 +338,7 @@
                                                 </StackPanel>
                                             </Label>
                                             <TextBlock Name="PART_TextUserScore" VerticalAlignment="Center"
-                                                        Style="{DynamicResource TextBlockGameScore}" />
+                                                       Style="{DynamicResource TextBlockGameScore}" />
 
                                             <Label Name="PART_ElemLinks" >
                                                 <StackPanel Orientation="Horizontal">
