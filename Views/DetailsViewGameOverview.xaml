@@ -2,6 +2,7 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
                     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                    xmlns:sys="clr-namespace:System;assembly=mscorlib"
                     mc:Ignorable="d">
 
     <Style TargetType="{x:Type DetailsViewGameOverview}">
@@ -63,11 +64,6 @@
 
                                 <DockPanel Margin="0,20,0,15" MaxWidth="1024" Grid.Row="1"
                                            Background="Transparent">
-                                    <Image Name="PART_ImageCover" VerticalAlignment="Bottom"
-                                            DockPanel.Dock="Right"
-                                            Height="{Settings GameDetailsCoverHeight}"
-                                            StretchDirection="Both" Stretch="Uniform"
-                                            RenderOptions.BitmapScalingMode="Fant" />
                                     <StackPanel VerticalAlignment="Bottom" DockPanel.Dock="Left">
                                         <DockPanel>
                                             <Image Name="PART_ImageIcon" MaxHeight="48" MaxWidth="48"
@@ -343,7 +339,7 @@
                                         </GridEx>
                                     </StackPanel>
 
-                                    <StackPanel DockPanel.Dock="Right" Margin="10,0,2,0">
+                                    <StackPanel Margin="10,0,0,0" DockPanel.Dock="Right">
                                         <StackPanel Name="PART_ElemNotes">
                                             <TextBlock Text="{DynamicResource LOCNotesLabel}" Margin="0,15,0,5"
                                                        Style="{DynamicResource BaseTextBlockStyle}" />
@@ -358,14 +354,51 @@
                                             <TextBlock Text="{DynamicResource LOCGameDescriptionTitle}" Margin="0,15,0,5"
                                                     Style="{DynamicResource BaseTextBlockStyle}" />
                                             <Separator Background="{DynamicResource PanelSeparatorBrush}" />
-                                            <HtmlTextView Name="PART_HtmlDescription"
-                                                        Margin="0,5,0,5"
-                                                        HtmlFontSize="{DynamicResource FontSize}"
-                                                        HtmlFontFamily="{DynamicResource FontFamily}"
-                                                        HtmlForeground="{DynamicResource TextColor}"
-                                                        LinkForeground="{DynamicResource GlyphColor}"
-                                                        ScrollViewer.HorizontalScrollBarVisibility="Disabled"
-                                                        ScrollViewer.VerticalScrollBarVisibility="Disabled"/>
+                                    
+                                            <DockPanel>
+                                                <HtmlTextView Name="PART_HtmlDescription"
+                                                              DockPanel.Dock="Left"
+                                                              Margin="0,5,0,5"
+                                                              HtmlFontSize="{DynamicResource FontSize}"
+                                                              HtmlFontFamily="{DynamicResource FontFamily}"
+                                                              HtmlForeground="{DynamicResource TextColor}"
+                                                              LinkForeground="{DynamicResource GlyphColor}"
+                                                              ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                                                              ScrollViewer.VerticalScrollBarVisibility="Disabled"
+                                                              Tag="{DynamicResource DetailsViewShowCover}">
+                                                    <HtmlTextView.Style>
+                                                        <Style TargetType="HtmlTextView">
+                                                            <Setter Property="MaxWidth" Value="{x:Static sys:Double.PositiveInfinity}" />
+                                                            <Style.Triggers>
+                                                                <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=Tag, FallbackValue=False}" Value="True">
+                                                                    <Setter Property="MaxWidth" Value="524" />
+                                                                </DataTrigger>
+                                                            </Style.Triggers>
+                                                        </Style>
+                                                    </HtmlTextView.Style>
+                                                </HtmlTextView>
+                                                              
+                                                <StackPanel Tag="{DynamicResource DetailsViewShowCover}">
+                                                    <Image Name="PART_ImageCover"
+                                                           DockPanel.Dock="Right"
+                                                           HorizontalAlignment="Right"
+                                                           Width="200"
+                                                           Height="{Settings GameDetailsCoverHeight}"
+                                                           Margin="10,5,0,5"
+                                                           StretchDirection="Both" Stretch="Uniform"
+                                                           RenderOptions.BitmapScalingMode="Fant" />
+                                                    <StackPanel.Style>
+                                                        <Style TargetType="StackPanel">
+                                                            <Setter Property="Visibility" Value="Collapsed" />
+                                                            <Style.Triggers>
+                                                                <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=Tag, FallbackValue=False}" Value="True">
+                                                                    <Setter Property="Visibility" Value="Visible" />
+                                                                </DataTrigger>
+                                                            </Style.Triggers>
+                                                        </Style>
+                                                    </StackPanel.Style>
+                                                </StackPanel>
+                                            </DockPanel>
                                         </StackPanel>
                                     </StackPanel>
                                 </DockPanel>

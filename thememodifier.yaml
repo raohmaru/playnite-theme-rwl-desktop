@@ -1,5 +1,6 @@
 Constants:
     - "Details View"
     - DetailsViewShowLogo: 'Show game logo (requires Extra Metadata Loader extension)'
+    - DetailsViewShowCover: 'Show game cover'
     - "Grid View Details"
     - GridViewShowLogo: 'Show game logo (requires Extra Metadata Loader extension)'
