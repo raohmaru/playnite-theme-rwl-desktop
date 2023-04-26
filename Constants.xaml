@@ -72,6 +72,8 @@
     <!--region ThemeModifier variables-->
     <sys:Boolean x:Key="DetailsViewShowLogo">true</sys:Boolean>
     <sys:Boolean x:Key="DetailsViewShowCover">true</sys:Boolean>
+    <sys:Boolean x:Key="DetailsViewShowBanner">true</sys:Boolean>
     <sys:Boolean x:Key="GridViewShowLogo">true</sys:Boolean>
+    <sys:Boolean x:Key="GridViewShowBanner">true</sys:Boolean>
     <!--region end-->
 </ResourceDictionary>

@@ -18,6 +18,27 @@
                                    RenderOptions.BitmapScalingMode="Fant" StretchDirection="Both"
                                    HorizontalAlignment="Center" VerticalAlignment="Center"
                                    Stretch="{Settings CoverArtStretch}" />
+                                                
+                                <ContentControl x:Name="ThemeExtras_Banner"
+                                                RenderOptions.BitmapScalingMode="Fant"
+                                                VerticalAlignment="Bottom"
+                                                Tag="{DynamicResource GridViewShowBanner}">
+                                    <ContentControl.Style>
+                                        <Style TargetType="ContentControl">
+                                            <Setter Property="Visibility" Value="Collapsed" />
+                                            <Style.Triggers>
+                                                <MultiDataTrigger>
+                                                    <MultiDataTrigger.Conditions>
+                                                        <Condition Binding="{PluginStatus Plugin=felixkmh_Extras_Plugin, FallbackValue=False}" Value="True" />
+                                                        <Condition Binding="{Binding RelativeSource={RelativeSource Self}, Path=Tag, FallbackValue=False}" Value="True" />
+                                                    </MultiDataTrigger.Conditions>
+                                                    <Setter Property="Visibility" Value="Visible" />
+                                                </MultiDataTrigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </ContentControl.Style>
+                                </ContentControl>
+                                   
                                 <Border Background="#99000000" x:Name="TextGameName" Visibility="Collapsed">
                                     <TextBlock Text="{Binding DisplayName}"
                                            TextWrapping="Wrap" Margin="5"
@@ -25,7 +46,9 @@
                                            TextTrimming="CharacterEllipsis" TextAlignment="Center"
                                            HorizontalAlignment="Center" VerticalAlignment="Center"/>
                                 </Border>
+                                
                                 <Border Background="#AA000000" x:Name="BorderMouseOver" Visibility="Collapsed" />
+                                
                                 <Viewbox VerticalAlignment="Center" HorizontalAlignment="Center"
                                          Name="GameControls"  Visibility="Collapsed">
                                     <StackPanel Orientation="Horizontal">
