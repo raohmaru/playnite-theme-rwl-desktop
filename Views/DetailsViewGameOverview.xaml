@@ -122,6 +122,26 @@
                                                     Width="40" Height="40" Margin="10,0,0,0"
                                                     Content="&#xEF3A;"
                                                     FontFamily="{DynamicResource FontIcoFont}" FontSize="{DynamicResource FontSizeLarger}" />
+                                            <StackPanel VerticalAlignment="Center"
+                                                        Tag="{DynamicResource ShowFavButton}">
+                                                <ToggleButton Name="FavToggleButton" Margin="10,0,0,0"
+                                                              Style="{DynamicResource FavToggleButton}"
+                                                              IsChecked="{PluginSettings Plugin=ThemeExtras, Path=Game.Favorite, Mode=TwoWay, FallbackValue={StaticResource False}}"/>
+                                                <StackPanel.Style>
+                                                    <Style TargetType="StackPanel">
+                                                        <Setter Property="Visibility" Value="Collapsed" />
+                                                        <Style.Triggers>
+                                                            <MultiDataTrigger>
+                                                                <MultiDataTrigger.Conditions>
+                                                                    <Condition Binding="{PluginStatus Plugin=felixkmh_Extras_Plugin, Status=Installed, FallbackValue=False}" Value="True" />
+                                                                    <Condition Binding="{Binding RelativeSource={RelativeSource Self}, Path=Tag, FallbackValue=False}" Value="True" />
+                                                                </MultiDataTrigger.Conditions>
+                                                                <Setter Property="Visibility" Value="Visible" />
+                                                            </MultiDataTrigger>
+                                                        </Style.Triggers>
+                                                    </Style>
+                                                </StackPanel.Style>
+                                            </StackPanel>
                                         </StackPanel>
                                     </StackPanel>
                                     <ContentControl x:Name="LibraryManagement_PluginFeaturesIconList" Height="35" Margin="10,0,0,0"

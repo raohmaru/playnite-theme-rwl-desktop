@@ -1,4 +1,5 @@
 Constants:
+    - ShowFavButton: 'Show favourites button (requires Theme Extras extension)'
     - "Details View"
     - DetailsViewShowLogo: 'Show game logo (requires Extra Metadata Loader extension)'
     - DetailsViewShowCover: 'Show game cover'

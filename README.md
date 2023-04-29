@@ -3,6 +3,6 @@
 Theme for [Playnite](https://playnite.link/) desktop mode.
 
 ## Supported Plugins
-+ LibraryManagement: Features Icon List
-+ ExtraMetadataLoader: Logos
-+ ThemeExtras: Banner
++ LibraryManagement: features icon list
++ ExtraMetadataLoader: logos
++ ThemeExtras: banner, favourite game

@@ -40,4 +40,43 @@
             </Trigger>
         </Style.Triggers>
     </Style>
+    
+    <Style x:Key="FavToggleButton" TargetType="{x:Type ToggleButton}" BasedOn="{StaticResource BaseStyle}">
+        <Setter Property="FontSize" Value="{DynamicResource FontSizeLarger}"/>
+        <Setter Property="FontFamily" Value="{StaticResource FontIcoFont}"/>
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ToggleButton">
+                    <Viewbox>
+                        <Grid>
+                            <TextBlock x:Name="TextUnchecked"
+                                       Text="&#xEC7A;"
+                                       Foreground="{DynamicResource GlyphBrush}"/>
+                        </Grid>
+                    </Viewbox>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsChecked" Value="True">
+                            <Setter Property="Foreground" Value="{DynamicResource MixedRatingBrush}" TargetName="TextUnchecked" />
+                            <Setter Property="Text" Value="&#xEC7C;" TargetName="TextUnchecked" />
+                        </Trigger>
+                        <MultiDataTrigger>
+                            <MultiDataTrigger.Conditions>
+                                <Condition Binding="{Binding RelativeSource={RelativeSource Self}, Path=IsMouseOver}" Value="True"/>
+                                <Condition Binding="{Binding RelativeSource={RelativeSource Self}, Path=IsChecked}" Value="True"/>
+                            </MultiDataTrigger.Conditions>
+                            <Setter Property="Text" Value="&#xEC7A;" TargetName="TextUnchecked" />
+                        </MultiDataTrigger>
+                        <MultiDataTrigger>
+                            <MultiDataTrigger.Conditions>
+                                <Condition Binding="{Binding RelativeSource={RelativeSource Self}, Path=IsMouseOver}" Value="True"/>
+                                <Condition Binding="{Binding RelativeSource={RelativeSource Self}, Path=IsChecked}" Value="False"/>
+                            </MultiDataTrigger.Conditions>
+                            <Setter Property="Text" Value="&#xEC7C;" TargetName="TextUnchecked" />
+                        </MultiDataTrigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
 </ResourceDictionary>
