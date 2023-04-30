@@ -226,7 +226,7 @@
                                                     <TextBlock Text="{DynamicResource LOCCompletionStatus}" Foreground="{DynamicResource TextBrushDarker}" />
                                                 </StackPanel>
                                             </Label>
-                                            <Button Name="PART_ButtonCompletionStatus" VerticalAlignment="Center" />
+                                            <ContentControl x:Name="ThemeExtras_CompletionStatusComboBox" VerticalAlignment="Center" />
 
                                             <Label Name="PART_ElemInstallDirectory" >
                                                 <StackPanel Orientation="Horizontal">
