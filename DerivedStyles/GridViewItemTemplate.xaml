@@ -48,10 +48,10 @@
                                            HorizontalAlignment="Center" VerticalAlignment="Center"/>
                                 </Border>
                                 
-                                <Border Background="#AA000000" x:Name="BorderMouseOver" Visibility="Collapsed" />
+                                <Border Background="#AA000000" x:Name="BorderMouseOver" Opacity="0" />
                                 
                                 <Viewbox VerticalAlignment="Center" HorizontalAlignment="Center"
-                                         Name="GameControls"  Visibility="Collapsed">
+                                         Name="GameControls" Opacity="0">
                                     <StackPanel Orientation="Horizontal">
                                         <Button Name="PART_ButtonPlay" Style="{StaticResource SimpleButton}"
                                                 Margin="20,0,2,0" VerticalAlignment="Center"
@@ -80,7 +80,8 @@
                                 <Condition Binding="{Binding IsInstalled}" Value="False" />
                                 <Condition Binding="{Settings DarkenUninstalledGamesGrid}" Value="True" />
                             </MultiDataTrigger.Conditions>
-                            <Setter Property="Visibility" Value="Visible" TargetName="BorderMouseOver" />
+                            <Setter Property="Opacity" Value="0.5" TargetName="PART_ImageCover" />
+                            <Setter Property="Opacity" Value="0.5" TargetName="ThemeExtras_Banner" />
                         </MultiDataTrigger>
                         <MultiDataTrigger>
                             <MultiDataTrigger.Conditions>
@@ -90,8 +91,26 @@
                             <Setter Property="Visibility" Value="Visible" TargetName="TextGameName"/>
                         </MultiDataTrigger>
                         <Trigger Property="IsMouseOver" Value="True">
-                            <Setter Property="Visibility" Value="Visible" TargetName="BorderMouseOver"/>
-                            <Setter Property="Visibility" Value="Visible" TargetName="GameControls"/>
+                            <Trigger.EnterActions>
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation Storyboard.TargetName="BorderMouseOver" Storyboard.TargetProperty="Opacity"
+                                                         To="1" Duration="0:00:0.2"/>
+                                        <DoubleAnimation Storyboard.TargetName="GameControls" Storyboard.TargetProperty="Opacity"
+                                                         To="1" Duration="0:00:0.2"/>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </Trigger.EnterActions>
+                            <Trigger.ExitActions>
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation Storyboard.TargetName="BorderMouseOver" Storyboard.TargetProperty="Opacity"
+                                                         To="0" Duration="0:00:0.2"/>
+                                        <DoubleAnimation Storyboard.TargetName="GameControls" Storyboard.TargetProperty="Opacity"
+                                                         To="0" Duration="0:00:0.2"/>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </Trigger.ExitActions>
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
