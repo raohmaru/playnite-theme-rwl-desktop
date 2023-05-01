@@ -21,6 +21,7 @@
                                                 
                                 <ContentControl x:Name="ThemeExtras_Banner"
                                                 RenderOptions.BitmapScalingMode="Fant"
+                                                Width="{Binding Width, ElementName=PART_ImageCover}"
                                                 VerticalAlignment="Bottom"
                                                 Tag="{DynamicResource GridViewShowBanner}">
                                     <ContentControl.Style>
