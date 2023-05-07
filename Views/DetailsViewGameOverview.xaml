@@ -86,22 +86,37 @@
 
                                 <DockPanel Margin="0,20,0,0" MaxWidth="1024" Grid.Row="1"
                                            VerticalAlignment="Bottom" DockPanel.Dock="Left"
-                                           Background="Transparent">
-                                    <DockPanel>
-                                        <Image Name="PART_ImageIcon" MaxHeight="48" MaxWidth="48"
-                                                DockPanel.Dock="Left" Margin="0,0,10,0"
-                                                VerticalAlignment="Center"
-                                                RenderOptions.BitmapScalingMode="Fant" />
-                                        <TextBlock Name="PART_TextDisplayName" FontFamily="{DynamicResource FontFamily}"
-                                                    DockPanel.Dock="Left"
-                                                    FontSize="{DynamicResource FontSizeLargest}" Margin="0,0,10,0" TextWrapping="Wrap"
-                                                    VerticalAlignment="Center"
-                                                    Foreground="{DynamicResource TextBrush}">
-                                            <TextBlock.Effect>
-                                                <DropShadowEffect ShadowDepth="3" RenderingBias="Quality"/>
-                                            </TextBlock.Effect>
-                                        </TextBlock>
-                                    </DockPanel>
+                                           Background="Transparent"
+                                           Tag="{DynamicResource DetailsViewShowTitle}">
+                                    <Image Name="PART_ImageIcon" MaxHeight="48" MaxWidth="48"
+                                            DockPanel.Dock="Left" Margin="0,0,10,0"
+                                            VerticalAlignment="Center"
+                                            RenderOptions.BitmapScalingMode="Fant" />
+                                    <TextBlock Name="PART_TextDisplayName" FontFamily="{DynamicResource FontFamily}"
+                                               DockPanel.Dock="Left"
+                                               FontSize="{DynamicResource FontSizeLargest}" Margin="0,0,10,0" TextWrapping="Wrap"
+                                               VerticalAlignment="Center"
+                                               Foreground="{DynamicResource TextBrush}">
+                                        <TextBlock.Effect>
+                                            <DropShadowEffect ShadowDepth="3" RenderingBias="Quality"/>
+                                        </TextBlock.Effect>
+                                    </TextBlock>
+                                    <DockPanel.Style>
+                                        <Style TargetType="DockPanel">
+                                            <Setter Property="Visibility" Value="Visible" />
+                                            <Style.Triggers>
+                                                <MultiDataTrigger>
+                                                    <MultiDataTrigger.Conditions>
+                                                        <Condition Binding="{PluginStatus Plugin=ExtraMetadataLoader_705fdbca-e1fc-4004-b839-1d040b8b4429, FallbackValue=False}" Value="True" />
+                                                        <Condition Binding="{PluginSettings Plugin=ExtraMetadataLoader, Path=IsLogoAvailable, FallbackValue=False}" Value="True" />
+                                                        <Condition Binding="{Binding ElementName=DetailsTop, Path=Visibility}" Value="Visible" />
+                                                        <Condition Binding="{Binding RelativeSource={RelativeSource Self}, Path=Tag, FallbackValue=True}" Value="False" />
+                                                    </MultiDataTrigger.Conditions>
+                                                    <Setter Property="Visibility" Value="Collapsed" />
+                                                </MultiDataTrigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </DockPanel.Style>
                                 </DockPanel>
 
                                 <DockPanel Margin="0,0,0,15" MaxWidth="1024" Grid.Row="2"

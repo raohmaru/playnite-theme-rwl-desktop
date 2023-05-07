@@ -2,8 +2,9 @@ Constants:
     - ShowFavButton: 'Show favourites button (requires Theme Extras extension)'
     - "Details View"
     - DetailsViewShowLogo: 'Show game logo (requires Extra Metadata Loader extension)'
+    - DetailsViewShowTitle: 'Show game name if logo is shown (requires Extra Metadata Loader extension)'
     - DetailsViewShowCover: 'Show game cover'
     - DetailsViewShowBanner: 'Show game platform banner (requires Theme Extras extension)'
     - "Grid View Details"
-    - GridViewShowLogo: 'Show game logo (requires Extra Metadata Loader extension)'
+    - GridViewShowLogo: 'Show game logo and hide the name (requires Extra Metadata Loader extension)'
     - GridViewShowBanner: 'Show game platform banner (requires Theme Extras extension)'
