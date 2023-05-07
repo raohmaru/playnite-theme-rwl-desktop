@@ -65,7 +65,7 @@
                                                         MaxWidth="500"
                                                         MaxHeight="{Settings CalculatedGameDetailsIndentation}"
                                                         VerticalAlignment="Center"
-                                                        Margin="0,80,0,0" />
+                                                        Margin="0,80,0,0"/>
                                     </Grid>
                                     <StackPanel.Style>
                                         <Style TargetType="StackPanel">
@@ -84,7 +84,7 @@
                                     </StackPanel.Style>
                                 </StackPanel>
 
-                                <DockPanel Margin="0,20,0,0" MaxWidth="1024" Grid.Row="1"
+                                <DockPanel Margin="0,20,0,0" MaxWidth="1024" Grid.Row="1" x:Name="GameTitle"
                                            VerticalAlignment="Bottom" DockPanel.Dock="Left"
                                            Background="Transparent"
                                            Tag="{DynamicResource DetailsViewShowTitle}">
@@ -112,7 +112,7 @@
                                                         <Condition Binding="{Binding ElementName=DetailsTop, Path=Visibility}" Value="Visible" />
                                                         <Condition Binding="{Binding RelativeSource={RelativeSource Self}, Path=Tag, FallbackValue=True}" Value="False" />
                                                     </MultiDataTrigger.Conditions>
-                                                    <Setter Property="Visibility" Value="Collapsed" />
+                                                    <Setter Property="Visibility" Value="Hidden" />
                                                 </MultiDataTrigger>
                                             </Style.Triggers>
                                         </Style>
