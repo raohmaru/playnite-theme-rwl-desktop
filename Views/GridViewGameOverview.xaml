@@ -219,7 +219,14 @@
                                                     <TextBlock Text="{DynamicResource LOCCompletionStatus}" Foreground="{DynamicResource TextBrushDarker}" />
                                                 </StackPanel>
                                             </Label>
-                                            <ContentControl x:Name="ThemeExtras_CompletionStatusComboBox" VerticalAlignment="Center" />
+                                            <DockPanel>
+                                                <StackPanel Visibility="{PluginStatus Plugin=felixkmh_Extras_Plugin, Status=Installed}">
+                                                    <ContentControl x:Name="ThemeExtras_CompletionStatusComboBox" VerticalAlignment="Center" Margin="0,2,0,0" />
+                                                </StackPanel>
+                                                <StackPanel Visibility="{PluginStatus Plugin=felixkmh_Extras_Plugin, Status=Installed, Converter={StaticResource InvertedBooleanToVisibilityConverter}}">
+                                                    <Button Name="PART_ButtonCompletionStatus" VerticalAlignment="Center" />
+                                                </StackPanel>
+                                            </DockPanel>
 
                                             <Label Name="PART_ElemInstallDirectory" >
                                                 <StackPanel Orientation="Horizontal">
