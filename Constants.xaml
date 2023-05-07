@@ -77,5 +77,6 @@
     <sys:Boolean x:Key="GridViewShowLogo">true</sys:Boolean>
     <sys:Boolean x:Key="GridViewShowBanner">true</sys:Boolean>
     <sys:Boolean x:Key="ShowFavButton">true</sys:Boolean>
+    <sys:Double x:Key="BgImageOpacity">1.0</sys:Double>
     <!--region end-->
 </ResourceDictionary>
