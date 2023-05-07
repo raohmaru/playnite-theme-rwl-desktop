@@ -1,11 +1,13 @@
 Constants:
     - BgImageOpacity(0.0,1.0): 'Opacity of the game background image'
-    - ShowFavButton: 'Show favourites button (requires Theme Extras extension)'
     - "Details View"
-    - DetailsViewShowLogo: 'Show game logo (requires Extra Metadata Loader extension)'
-    - DetailsViewShowTitle: 'Show game name if logo is shown (requires Extra Metadata Loader extension)'
     - DetailsViewShowCover: 'Show game cover'
-    - DetailsViewShowBanner: 'Show game platform banner (requires Theme Extras extension)'
     - "Grid View Details"
-    - GridViewShowLogo: 'Show game logo and hide the name (requires Extra Metadata Loader extension)'
-    - GridViewShowBanner: 'Show game platform banner (requires Theme Extras extension)'
+    - "Extension: Theme Extras"
+    - ShowFavButton: 'Show favourites button'
+    - DetailsViewShowBanner: 'Show game platform banner in details view'
+    - GridViewShowBanner: 'Show game platform banner in grid view'
+    - "Extension: Extra Metadata Loader"
+    - DetailsViewShowLogo: 'Show game logo in details view'
+    - DetailsViewShowTitle: 'Show game name if logo is shown in details view'
+    - GridViewShowLogo: 'Show game logo and hide the name in grid view'
