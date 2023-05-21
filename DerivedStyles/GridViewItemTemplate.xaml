@@ -50,8 +50,7 @@
 
                                 <Border Background="#AA000000" x:Name="BorderMouseOver" Opacity="0" />
 
-                                <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Orientation="Vertical"
-                                      Name="GameControls" Opacity="0">
+                                <Grid Name="GameControls" Opacity="0">
                                     <Button Name="PART_ButtonPlay" Style="{StaticResource SimpleButton}"
                                             HorizontalAlignment="Center" VerticalAlignment="Center"
                                             FontFamily="{StaticResource FontIcoFont}" FontSize="50"
@@ -83,12 +82,12 @@
                                             </EventTrigger>
                                         </Button.Triggers>
                                     </Button>
-                                    <!-- <Button Name="PART_ButtonInfo" Style="{StaticResource SimpleButton}"
-                                            HorizontalAlignment="Center" VerticalAlignment="Center"
-                                            FontFamily="{StaticResource FontIcoFont}" FontSize="35"
-                                            Margin="0,100,0,0"
-                                            Content="&#xef4f;" /> -->
-                                </StackPanel>
+                                    <Button Name="PART_ButtonInfo" Style="{StaticResource SimpleButton}"
+                                            HorizontalAlignment="Left" VerticalAlignment="Top"
+                                            FontFamily="{StaticResource FontIcoFont}" FontSize="28"
+                                            Margin="2,2,0,0"
+                                            Content="&#xef4f;" />
+                                </Grid>
                             </Grid>
                             <TextBlock Text="{Binding DisplayName}"
                                        Style="{DynamicResource BaseTextBlockStyle}"

@@ -261,6 +261,11 @@
                                                                                 </TransformGroup>
                                                                             </Setter.Value>
                                                                         </Setter>
+                                                                        <Setter Property="Effect">
+                                                                            <Setter.Value>
+                                                                                <DropShadowEffect ShadowDepth="0" RenderingBias="Quality"/>
+                                                                            </Setter.Value>
+                                                                        </Setter>
                                                                     </Style>
                                                                 </Style.Resources>
                                                             </Style>
