@@ -70,6 +70,7 @@
         <Setter Property="FontSize" Value="{DynamicResource FontSizeLarger}"/>
         <Setter Property="FontFamily" Value="{StaticResource FontIcoFont}"/>
         <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="ToolTip" Value="Add to favorites" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="ToggleButton">
@@ -84,6 +85,7 @@
                         <Trigger Property="IsChecked" Value="True">
                             <Setter Property="Foreground" Value="{DynamicResource MixedRatingBrush}" TargetName="TextUnchecked" />
                             <Setter Property="Text" Value="&#xEC7C;" TargetName="TextUnchecked" />
+                            <Setter Property="ToolTip" Value="Remove from favorites" />
                         </Trigger>
                         <MultiDataTrigger>
                             <MultiDataTrigger.Conditions>
