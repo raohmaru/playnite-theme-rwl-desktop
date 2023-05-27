@@ -69,8 +69,8 @@
     </Style>
     
     <Style x:Key="CircleButton" TargetType="Button" BasedOn="{StaticResource {x:Type Button}}">
-        <Setter Property="Background" Value="{DynamicResource TransparentColor}" />
-        <Setter Property="BorderBrush" Value="{DynamicResource TransparentColor}" />
+        <Setter Property="Background" Value="{DynamicResource TransparentColorBrush}" />
+        <Setter Property="BorderBrush" Value="{DynamicResource TransparentColorBrush}" />
         <Setter Property="Padding" Value="0,0,0,0" />
         <Setter Property="FontWeight" Value="Bold" />
         <Setter Property="Tag" Value="100"/>
