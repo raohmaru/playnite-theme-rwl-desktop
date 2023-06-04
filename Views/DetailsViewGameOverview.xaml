@@ -321,23 +321,28 @@
                                                                         <Setter Property="MaxWidth" Value="{x:Static sys:Double.PositiveInfinity}" />
                                                                         <Style.Triggers>
                                                                             <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=Tag, FallbackValue=False}" Value="True">
-                                                                                <Setter Property="MaxWidth" Value="524" />
+                                                                                <Setter Property="MaxWidth" Value="520" />
                                                                             </DataTrigger>
                                                                         </Style.Triggers>
                                                                     </Style>
                                                                 </HtmlTextView.Style>
                                                             </HtmlTextView>
 
-                                                            <StackPanel Tag="{DynamicResource DetailsViewShowCover}">
-                                                                <Image Name="PART_ImageCover"
-                                                                       DockPanel.Dock="Right"
-                                                                       HorizontalAlignment="Right"
-                                                                       Width="200"
-                                                                       Height="{Settings GameDetailsCoverHeight}"
-                                                                       Margin="10,10,0,0"
-                                                                       StretchDirection="Both" Stretch="Uniform"
-                                                                       RenderOptions.BitmapScalingMode="Fant"
-                                                                       Cursor="Arrow" />
+                                                            <StackPanel Tag="{DynamicResource DetailsViewShowCover}"
+                                                                        Margin="10,0,0,0">
+                                                                <Border BorderThickness="{DynamicResource ControlBorderThickness}"
+                                                                        BorderBrush="{DynamicResource NormalBorderBrush}"
+                                                                        CornerRadius="{DynamicResource ControlCornerRadius}"
+                                                                        DockPanel.Dock="Right"
+                                                                        HorizontalAlignment="Right"
+                                                                        Width="{Binding ElementName=PART_ImageCover, Path=ActualWidth}">
+                                                                    <Image Name="PART_ImageCover"
+                                                                           Width="150"
+                                                                           Height="{Settings GameDetailsCoverHeight}"
+                                                                           StretchDirection="Both" Stretch="Uniform"
+                                                                           RenderOptions.BitmapScalingMode="Fant"
+                                                                           Cursor="Arrow" />
+                                                                </Border>
                                                                 <StackPanel.Style>
                                                                     <Style TargetType="StackPanel">
                                                                         <Setter Property="Visibility" Value="Collapsed" />
