@@ -66,6 +66,11 @@
         <GradientStop Color="#002C3A67" Offset="0.7"/>
     </LinearGradientBrush>
 
+    <LinearGradientBrush x:Key="ExpanderHoverBackgroundBrush" StartPoint="-0.1,0.5" EndPoint="1.2,1" >
+        <GradientStop Color="#FF4b62ae" Offset="0"/>
+        <GradientStop Color="#004b62ae" Offset="1"/>
+    </LinearGradientBrush>
+
     <LinearGradientBrush x:Key="WindowBackgourndBrush" StartPoint="0.5,-0.2" EndPoint="0.4,1" >
         <GradientStop Color="#202b4d" Offset="0"/>
         <GradientStop Color="{DynamicResource MainColorDark}" Offset="0.4"/>

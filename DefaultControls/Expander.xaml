@@ -15,23 +15,30 @@
                     <Border Padding="{TemplateBinding Padding}" Background="{TemplateBinding Background}"
                             BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">
                         <Grid>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="Auto" />
-                                <ColumnDefinition Width="*" />
-                            </Grid.ColumnDefinitions>
-                            <TextBlock Text="&#xea79;" x:Name="CollapsedIcon" FontFamily="{StaticResource FontIcoFont}"
-                                       VerticalAlignment="Center" HorizontalAlignment="Center"
-                                       Style="{DynamicResource BaseTextBlockStyle}"
-                                       Foreground="{DynamicResource GlyphBrush}" FontSize="18" MinWidth="20" Margin="5,0,5,0"
-                                       Grid.Column="0" TextAlignment="Center" />
-                            <TextBlock Text="&#xea77;" x:Name="ExpandedIcon" FontFamily="{StaticResource FontIcoFont}"
-                                       VerticalAlignment="Center" HorizontalAlignment="Center"
-                                       Style="{DynamicResource BaseTextBlockStyle}"
-                                       Foreground="{DynamicResource GlyphBrush}" FontSize="18" MinWidth="20" Margin="5,0,5,0"
-                                       Visibility="Collapsed"
-                                       Grid.Column="0" TextAlignment="Center"/>
-                            <ContentPresenter Grid.Column="1" VerticalAlignment="Center"
-                                              SnapsToDevicePixels="True" HorizontalAlignment="Stretch" RecognizesAccessKey="True"  />
+                            <Rectangle Fill="{DynamicResource ExpanderHoverBackgroundBrush}" x:Name="HoverRectangle">
+                                <Rectangle.RenderTransform>
+                                    <ScaleTransform x:Name="ExpanderRectTransform" ScaleX="0"/>
+                                </Rectangle.RenderTransform>
+                            </Rectangle>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Text="&#xea79;" x:Name="CollapsedIcon" FontFamily="{StaticResource FontIcoFont}"
+                                           VerticalAlignment="Center" HorizontalAlignment="Center"
+                                           Style="{DynamicResource BaseTextBlockStyle}"
+                                           Foreground="{DynamicResource GlyphBrush}" FontSize="18" MinWidth="20" Margin="5,0,5,0"
+                                           Grid.Column="0" TextAlignment="Center" />
+                                <TextBlock Text="&#xea77;" x:Name="ExpandedIcon" FontFamily="{StaticResource FontIcoFont}"
+                                           VerticalAlignment="Center" HorizontalAlignment="Center"
+                                           Style="{DynamicResource BaseTextBlockStyle}"
+                                           Foreground="{DynamicResource GlyphBrush}" FontSize="18" MinWidth="20" Margin="5,0,5,0"
+                                           Visibility="Collapsed"
+                                           Grid.Column="0" TextAlignment="Center"/>
+                                <ContentPresenter Grid.Column="1" VerticalAlignment="Center"
+                                                  SnapsToDevicePixels="True" HorizontalAlignment="Stretch" RecognizesAccessKey="True"  />
+                            </Grid>
                         </Grid>
                     </Border>
                     <ControlTemplate.Triggers>
@@ -40,7 +47,32 @@
                             <Setter Property="Visibility" TargetName="CollapsedIcon" Value="Collapsed" />
                         </Trigger>
                         <Trigger Property="IsMouseOver" Value="True">
-                            <Setter Property="Opacity" Value="0.75" />
+                            <Setter Property="Foreground" Value="{DynamicResource WhiteColorBrush}" TargetName="ExpandedIcon" />
+                            <Setter Property="Foreground" Value="{DynamicResource WhiteColorBrush}" TargetName="CollapsedIcon" />
+                            <Trigger.EnterActions>
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation Storyboard.TargetName="ExpanderRectTransform" Storyboard.TargetProperty="(ScaleTransform.ScaleX)"
+                                                         To="1" Duration="0:00:0.15">
+                                            <DoubleAnimation.EasingFunction>
+                                                <QuadraticEase EasingMode="EaseOut"/>
+                                            </DoubleAnimation.EasingFunction>
+                                        </DoubleAnimation>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </Trigger.EnterActions>
+                            <Trigger.ExitActions>
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation Storyboard.TargetName="ExpanderRectTransform" Storyboard.TargetProperty="(ScaleTransform.ScaleX)"
+                                                         To="0" Duration="0:00:0.2">
+                                            <DoubleAnimation.EasingFunction>
+                                                <QuadraticEase EasingMode="EaseOut"/>
+                                            </DoubleAnimation.EasingFunction>
+                                        </DoubleAnimation>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </Trigger.ExitActions>
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
@@ -168,7 +200,7 @@
                                         <DoubleAnimation Storyboard.TargetName="BorderTransform" Storyboard.TargetProperty="(ScaleTransform.ScaleX)"
                                                          To="0" Duration="0:00:0.2">
                                             <DoubleAnimation.EasingFunction>
-                                                <QuadraticEase EasingMode="EaseIn"/>
+                                                <QuadraticEase EasingMode="EaseOut"/>
                                             </DoubleAnimation.EasingFunction>
                                         </DoubleAnimation>
                                     </Storyboard>
