@@ -81,4 +81,133 @@
             </Setter.Value>
         </Setter>
     </Style>
+
+    <Style x:Key="ExpanderClearHeader" TargetType="{x:Type ToggleButton}">
+        <Setter Property="Foreground" Value="{DynamicResource TextBrush}" />
+        <Setter Property="SnapsToDevicePixels" Value="True" />
+        <Setter Property="Cursor" Value="Hand" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type ToggleButton}">
+                    <Border Padding="{TemplateBinding Padding}" Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">
+                        <StackPanel>
+                            <StackPanel HorizontalAlignment="Left" VerticalAlignment="Center"
+                                        Orientation="Horizontal">
+                                <ContentPresenter SnapsToDevicePixels="True" HorizontalAlignment="Stretch" RecognizesAccessKey="True"
+                                                  x:Name="HeaderContent" />
+                                <TextBlock Text="&#xea79;" FontFamily="{StaticResource FontIcoFont}"
+                                           VerticalAlignment="Center" HorizontalAlignment="Center"
+                                           x:Name="CollapseIcon"
+                                           Style="{DynamicResource BaseTextBlockStyle}"
+                                           Foreground="{DynamicResource GlyphBrush}" FontSize="18" MinWidth="20" Margin="5,0,0,0"
+                                           RenderTransformOrigin="0.4, 0.5">
+                                    <TextBlock.RenderTransform>
+                                        <RotateTransform x:Name="IconTransform" CenterX="0" CenterY="0" Angle="0" />
+                                    </TextBlock.RenderTransform>
+                                </TextBlock>
+                            </StackPanel>
+                            <Grid>
+                                <Rectangle Fill="{DynamicResource PanelSeparatorBrush}" Height="1"
+                                           VerticalAlignment="Bottom">
+                                    <Rectangle.RenderTransform>
+                                        <ScaleTransform x:Name="BorderTransform" ScaleX="0"/>
+                                    </Rectangle.RenderTransform>
+                                </Rectangle>
+                                <Border SnapsToDevicePixels="True"
+                                        Width="{Binding ElementName=HeaderContent, Path=ActualWidth}"
+                                        VerticalAlignment="Bottom" HorizontalAlignment="Left"
+                                        BorderThickness="0,0,0,2" BorderBrush="{DynamicResource GlyphBrush}" />
+                            </Grid>
+                        </StackPanel>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsChecked" Value="True">
+                            <Trigger.EnterActions>
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation Storyboard.TargetName="IconTransform" Storyboard.TargetProperty="(RotateTransform.Angle)"
+                                                         To="90" Duration="0:00:0.2">
+                                            <DoubleAnimation.EasingFunction>
+                                                <QuadraticEase EasingMode="EaseInOut"/>
+                                            </DoubleAnimation.EasingFunction>
+                                        </DoubleAnimation>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </Trigger.EnterActions>
+                            <Trigger.ExitActions>
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation Storyboard.TargetName="IconTransform" Storyboard.TargetProperty="(RotateTransform.Angle)"
+                                                         To="0" Duration="0:00:0.2">
+                                            <DoubleAnimation.EasingFunction>
+                                                <QuadraticEase EasingMode="EaseInOut"/>
+                                            </DoubleAnimation.EasingFunction>
+                                        </DoubleAnimation>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </Trigger.ExitActions>
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Foreground" Value="{DynamicResource WhiteColorBrush}" TargetName="CollapseIcon" />
+                            <Trigger.EnterActions>
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation Storyboard.TargetName="BorderTransform" Storyboard.TargetProperty="(ScaleTransform.ScaleX)"
+                                                         To="1" Duration="0:00:0.2">
+                                            <DoubleAnimation.EasingFunction>
+                                                <QuadraticEase EasingMode="EaseOut"/>
+                                            </DoubleAnimation.EasingFunction>
+                                        </DoubleAnimation>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </Trigger.EnterActions>
+                            <Trigger.ExitActions>
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation Storyboard.TargetName="BorderTransform" Storyboard.TargetProperty="(ScaleTransform.ScaleX)"
+                                                         To="0" Duration="0:00:0.2">
+                                            <DoubleAnimation.EasingFunction>
+                                                <QuadraticEase EasingMode="EaseIn"/>
+                                            </DoubleAnimation.EasingFunction>
+                                        </DoubleAnimation>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </Trigger.ExitActions>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="ExpanderClear" TargetType="{x:Type Expander}" BasedOn="{StaticResource {x:Type Expander}}">
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Expander}">
+                    <DockPanel>
+                        <ToggleButton BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}"
+                                      Style="{DynamicResource ExpanderClearHeader}"
+                                      Padding="{TemplateBinding Padding}"
+                                      MinHeight="25" DockPanel.Dock="Top"
+                                      Background="{TemplateBinding Background}"
+                                      Content="{TemplateBinding Header}"
+                                      IsChecked="{Binding Path=IsExpanded, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}" />
+                        <Border x:Name="Border" DockPanel.Dock="Top" Visibility="Collapsed"
+                                BorderThickness="{TemplateBinding BorderThickness}" BorderBrush="{TemplateBinding BorderBrush}">
+                            <ContentPresenter Focusable="False"
+                                              HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                              VerticalAlignment="{TemplateBinding VerticalContentAlignment}"  />
+                        </Border>
+                    </DockPanel>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsExpanded" Value="true">
+                            <Setter Property="Visibility" TargetName="Border" Value="Visible" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
 </ResourceDictionary>

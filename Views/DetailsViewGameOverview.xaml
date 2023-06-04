@@ -256,7 +256,7 @@
                                                         Width="150" Height="40" />
                                                 <Button Name="PART_ButtonMoreActions"
                                                         Width="40" Height="40" Margin="10,0,0,0"
-                                                        Content="&#xEA67;"
+                                                        Content="&#xEFA2;"
                                                         FontFamily="{DynamicResource FontIcoFont}" FontSize="{DynamicResource FontSizeLarger}" />
                                                 <Button x:Name="PART_ButtonEditGame"
                                                         Width="40" Height="40" Margin="10,0,0,0"
@@ -287,12 +287,9 @@
                                                         <Style TargetType="TabItem" BasedOn="{StaticResource {x:Type TabItem}}">
                                                             <Setter Property="IsSelected" Value="True" />
                                                             <Style.Triggers>
-                                                                <MultiDataTrigger>
-                                                                    <MultiDataTrigger.Conditions>
-                                                                        <Condition Binding="{Binding IsVisible, ElementName=PART_Screenshots, FallbackValue=False}" Value="False" />
-                                                                    </MultiDataTrigger.Conditions>
+                                                                <DataTrigger Binding="{Binding IsVisible, ElementName=PART_Screenshots, FallbackValue=False}" Value="False">
                                                                     <Setter Property="IsSelected" Value="True" />
-                                                                </MultiDataTrigger>
+                                                                </DataTrigger>
                                                             </Style.Triggers>
                                                         </Style>
                                                     </TabItem.Style>
