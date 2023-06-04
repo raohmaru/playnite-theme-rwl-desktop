@@ -417,7 +417,17 @@
                                         </Expander>
                                         
                                         <StackPanel Margin="0,0,0,0" DockPanel.Dock="Top">
-                                            <TabControl Style="{StaticResource {x:Type TabControl}}" Margin="0,7,5,0">
+                                            <TabControl Margin="0,7,5,0">
+                                                <TabControl.Style>
+                                                    <Style TargetType="TabControl" BasedOn="{StaticResource {x:Type TabControl}}">
+                                                        <Style.Resources>
+                                                            <Style TargetType="TabPanel">
+                                                                <Setter Property="Margin" Value="-10,0,0,0"/>
+                                                            </Style>
+                                                        </Style.Resources>
+                                                    </Style>
+                                                </TabControl.Style>
+                                                
                                                 <!-- Description  -->
                                                 <TabItem Name="PART_ElemDescription">
                                                     <TabItem.Style>
