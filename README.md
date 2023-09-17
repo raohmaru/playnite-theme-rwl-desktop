@@ -12,3 +12,8 @@ Theme for [Playnite](https://playnite.link/) desktop mode.
 + [ExtraMetadataLoader](https://playnite.link/addons.html#ExtraMetadataLoader_705fdbca-e1fc-4004-b839-1d040b8b4429): logos.
 + [ThemeExtras](https://github.com/felixkmh/ThemeExtras-for-Playnite): banner, favourite game, completion status comboBox.
 + [ScreenshotsVisualizer](https://playnite.link/forum/thread-514.html): single picture, list, button.
+
+## Installation Instructions
+
++ Download last released PTHM file from https://github.com/raohmaru/playnite-theme-rwl-desktop/releases.
++ Open the downloaded file and proceed.
