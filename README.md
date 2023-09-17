@@ -2,9 +2,9 @@
 
 Theme for [Playnite](https://playnite.link/) desktop mode.
 
-[<img src="https://raw.githubusercontent.com/raohmaru/playnite-theme-rwl-desktop/main/Screenshots/playnite-theme-rwl-desktop-1.jpg" alt="Rwl Playnite Theme screen" width="400">](./Screenshots/playnite-theme-rwl-desktop-1.jpg)
-[<img src="https://raw.githubusercontent.com/raohmaru/playnite-theme-rwl-desktop/main/Screenshots/playnite-theme-rwl-desktop-2.jpg" alt="Rwl Playnite Theme screen" width="400">](./Screenshots/playnite-theme-rwl-desktop-2.jpg)
-[<img src="https://raw.githubusercontent.com/raohmaru/playnite-theme-rwl-desktop/main/Screenshots/playnite-theme-rwl-desktop-3.jpg" alt="Rwl Playnite Theme screen" width="400">](./Screenshots/playnite-theme-rwl-desktop-3.jpg)
+[<img src="https://raw.githubusercontent.com/raohmaru/playnite-theme-rwl-desktop/main/Screenshots/playnite-theme-rwl-desktop-1.jpg" alt="Rwl Playnite Theme screen" width="400">](https://raw.githubusercontent.com/raohmaru/playnite-theme-rwl-desktop/main/Screenshots/playnite-theme-rwl-desktop-1.jpg)
+[<img src="https://raw.githubusercontent.com/raohmaru/playnite-theme-rwl-desktop/main/Screenshots/playnite-theme-rwl-desktop-2.jpg" alt="Rwl Playnite Theme screen" width="400">](https://raw.githubusercontent.com/raohmaru/playnite-theme-rwl-desktop/main/Screenshots/playnite-theme-rwl-desktop-2.jpg)
+[<img src="https://raw.githubusercontent.com/raohmaru/playnite-theme-rwl-desktop/main/Screenshots/playnite-theme-rwl-desktop-3.jpg" alt="Rwl Playnite Theme screen" width="400">](https://raw.githubusercontent.com/raohmaru/playnite-theme-rwl-desktop/main/Screenshots/playnite-theme-rwl-desktop-3.jpg)
 
 ## Supported Plugins
 
