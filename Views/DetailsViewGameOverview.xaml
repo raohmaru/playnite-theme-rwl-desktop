@@ -261,7 +261,10 @@
                                                 <Button x:Name="PART_ButtonEditGame"
                                                         Width="40" Height="40" Margin="10,0,0,0"
                                                         Content="&#xEF3A;"
-                                                        FontFamily="{DynamicResource FontIcoFont}" FontSize="{DynamicResource FontSizeLarger}" />
+                                                        FontFamily="{DynamicResource FontIcoFont}" FontSize="{DynamicResource FontSizeLarger}"
+                                                        Tag="{DynamicResource ShowButtonEditGame}"
+                                                        Visibility="{Binding RelativeSource={RelativeSource Self}, Path=Tag, FallbackValue=Collapsed, Converter={StaticResource BooleanToVisibilityConverter}}">
+                                                </Button>
                                             </StackPanel>
                                         </StackPanel>
                                         <ContentControl x:Name="LibraryManagement_PluginFeaturesIconList" Height="35" Margin="10,0,0,0"

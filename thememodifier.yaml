@@ -1,5 +1,6 @@
 Constants:
     - BgImageOpacity(0.0,1.0): 'Opacity of the game background image'
+    - ShowButtonEditGame: 'Show Edit Game button'
     - "Details View"
     - DetailsViewShowCover: 'Show game cover'
     - "Grid View Details"

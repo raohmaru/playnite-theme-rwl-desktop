@@ -85,5 +85,6 @@
     <sys:Boolean x:Key="GridViewShowBanner">true</sys:Boolean>
     <sys:Boolean x:Key="ShowFavButton">true</sys:Boolean>
     <sys:Double x:Key="BgImageOpacity">1.0</sys:Double>
+    <sys:Boolean x:Key="ShowButtonEditGame">true</sys:Boolean>
     <!--region end-->
 </ResourceDictionary>
