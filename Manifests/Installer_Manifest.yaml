@@ -3,7 +3,7 @@ Packages:
   - Version: 1.2.0
     RequiredApiVersion: 2.6.0
     ReleaseDate: 2024-04-01
-    PackageUrl: https://github.com/raohmaru/playnite-theme-rwl-desktop/releases/download/1.2.0/Raohmaru_Rwl_Destkop_1_2_0.pthm
+    PackageUrl: https://github.com/raohmaru/playnite-theme-rwl-desktop/releases/download/1.2.0/Raohmaru_Rwl_Desktop_1_2_0.pthm
     Changelog:
       - Change default foreground color and hover behaviour of the Toggle Favorite button.
       - Using ThemeExtras UserRating control in the details view.
