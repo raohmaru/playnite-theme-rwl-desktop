@@ -693,8 +693,13 @@
                                                             <TextBlock Text="{DynamicResource LOCUserScore}" Foreground="{DynamicResource TextBrushDarker}" />
                                                         </StackPanel>
                                                     </Label>
-                                                    <TextBlock Name="PART_TextUserScore" VerticalAlignment="Center"
-                                                               Style="{DynamicResource TextBlockGameScore}" />
+                                                    <StackPanel Visibility="{PluginStatus Plugin=felixkmh_Extras_Plugin, Status=Installed}" VerticalAlignment="Center">
+                                                        <StackPanel.Resources>
+                                                            <SolidColorBrush x:Key="Extras_FilledStarBrush" Color="{DynamicResource WhiteColor}"/>
+                                                            <SolidColorBrush x:Key="Extras_EmptyStarBrush" Color="{DynamicResource WhiteColor}" Opacity="0.4"/>
+                                                        </StackPanel.Resources>
+                                                        <ContentControl x:Name="ThemeExtras_UserRating" Visibility="{Binding UserScoreVisibility}"/>
+                                                    </StackPanel>
 
                                                     <Label Name="PART_ElemLinks" >
                                                         <StackPanel Orientation="Horizontal">
