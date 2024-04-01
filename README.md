@@ -10,7 +10,7 @@ Theme for [Playnite](https://playnite.link/) desktop mode.
 
 + [LibraryManagement](https://playnite.link/forum/thread-544.html): features icon list.
 + [ExtraMetadataLoader](https://playnite.link/addons.html#ExtraMetadataLoader_705fdbca-e1fc-4004-b839-1d040b8b4429): logos.
-+ [ThemeExtras](https://github.com/felixkmh/ThemeExtras-for-Playnite): banner, favourite game, completion status comboBox.
++ [ThemeExtras](https://github.com/felixkmh/ThemeExtras-for-Playnite): banner, favourite game, completion status comboBox, user rating.
 + [ScreenshotsVisualizer](https://playnite.link/forum/thread-514.html): single picture, list, button.
 
 ## Installation Instructions
