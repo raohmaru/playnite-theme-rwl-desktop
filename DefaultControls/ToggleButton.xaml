@@ -78,7 +78,7 @@
                         <Grid>
                             <TextBlock x:Name="TextUnchecked"
                                        Text="&#xEC7A;"
-                                       Foreground="{DynamicResource GlyphBrush}"/>
+                                       Foreground="{DynamicResource MixedRatingBrush}"/>
                         </Grid>
                     </Viewbox>
                     <ControlTemplate.Triggers>
@@ -89,17 +89,21 @@
                         </Trigger>
                         <MultiDataTrigger>
                             <MultiDataTrigger.Conditions>
-                                <Condition Binding="{Binding RelativeSource={RelativeSource Self}, Path=IsMouseOver}" Value="True"/>
                                 <Condition Binding="{Binding RelativeSource={RelativeSource Self}, Path=IsChecked}" Value="True"/>
                             </MultiDataTrigger.Conditions>
                             <Setter Property="Text" Value="&#xEC7A;" TargetName="TextUnchecked" />
                         </MultiDataTrigger>
                         <MultiDataTrigger>
                             <MultiDataTrigger.Conditions>
-                                <Condition Binding="{Binding RelativeSource={RelativeSource Self}, Path=IsMouseOver}" Value="True"/>
                                 <Condition Binding="{Binding RelativeSource={RelativeSource Self}, Path=IsChecked}" Value="False"/>
                             </MultiDataTrigger.Conditions>
                             <Setter Property="Text" Value="&#xEC7C;" TargetName="TextUnchecked" />
+                        </MultiDataTrigger>
+                        <MultiDataTrigger>
+                            <MultiDataTrigger.Conditions>
+                                <Condition Binding="{Binding RelativeSource={RelativeSource Self}, Path=IsMouseOver}" Value="True"/>
+                            </MultiDataTrigger.Conditions>
+                            <Setter Property="Foreground" Value="{DynamicResource GlyphBrush}" TargetName="TextUnchecked" />
                         </MultiDataTrigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
