@@ -1,8 +1,12 @@
 ThemeApiVersion: 2.6.0
-Id: Raohmaru_Rwl_Destkop
+Id: Raohmaru_Rwl_Desktop_e3065120-6742-4ebd-95de-b9ce142737ac
 Name: Rwl
 Author: Raohmaru
 Version: 1.2.0
 Links:
 - Name: GitHub
   Url: https://github.com/raohmaru/playnite-theme-rwl-desktop
+- Name: Issues Tracker
+  Url: https://github.com/raohmaru/playnite-theme-rwl-desktop/issues
+- Name: Ko-fi (Tips and Donations)
+  Url: https://ko-fi.com/raohmaru
