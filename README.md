@@ -12,8 +12,17 @@ Theme for [Playnite](https://playnite.link/) desktop mode.
 + [ScreenshotsVisualizer](https://playnite.link/forum/thread-514.html): single picture, list, button.
 
 ## Installation Instructions
++ Open Playnite, and from the main menu go to Addons (F9 key).
++ Click on Browse > Theme Desktop.
++ Search for "Rwl", install it and then save the changes.
++ After Playnite is reloaded, open the Settings (F4 key).
++ Click on Appearance and select the theme "Rawl". Save the changes.
+
+## Manual Installation Instructions
 + Download last released PTHM file from https://github.com/raohmaru/playnite-theme-rwl-desktop/releases.
 + Open the downloaded file and proceed.
++ In Playnite, open the Settings (F4 key).
++ Click on Appearance and select the theme "Rawl". Save the changes.
 
 ## Tips and Donations ♥
 This Playnite theme is and will always be free.
