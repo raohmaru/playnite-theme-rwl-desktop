@@ -17,23 +17,29 @@
                                   d:DataContext="{x:Static DesignMainViewModel.DesignSelectedGameDetailsIntance}"
                                   x:Name="PART_ScrollViewHost">
                         <Grid>
-                            <FadeImage x:Name="PART_ImageBackground" Stretch="Uniform"
+                            <FadeImage x:Name="PART_ImageBackground" Stretch="UniformToFill"
                                        HorizontalAlignment="Center" VerticalAlignment="Top"
-                                       Opacity="{DynamicResource BgImageOpacity}">
-                                <FadeImage.ImageOpacityMask>
-                                    <LinearGradientBrush StartPoint="0.0, 0.0" EndPoint="0.0, 1.0">
-                                        <GradientStop Color="Black" Offset="0.3" x:Name="ImageBgGradientStop1" />
-                                        <GradientStop Color="Transparent" Offset="1" />
-                                    </LinearGradientBrush>
-                                </FadeImage.ImageOpacityMask>
-                                <FadeImage.Style>
-                                    <Style TargetType="FadeImage">
+                                       Opacity="{DynamicResource BgImageOpacity}"
+                                       MaxHeight="{Binding ElementName=WindowMain, Path=ActualHeight, Mode=OneWay}"
+                                       Margin="0,-52,0,0">
+                            </FadeImage>
+                            <Rectangle HorizontalAlignment="Center" VerticalAlignment="Top"
+                                       Width="{Binding ElementName=PART_ImageBackground, Path=ActualWidth, Mode=OneWay}"
+                                       Height="{Binding ElementName=PART_ImageBackground, Path=ActualHeight, Mode=OneWay}"
+                                       Margin="0,-52,0,0"
+                                       Tag="{DynamicResource DetailsViewFadeImage}">
+                                <Rectangle.Style>
+                                    <Style TargetType="Rectangle">
+                                        <Setter Property="Visibility" Value="Visible" />
                                         <Style.Triggers>
+                                            <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=Tag, FallbackValue=True}" Value="False">
+                                                <Setter Property="Visibility" Value="Collapsed" />
+                                            </DataTrigger>
                                             <DataTrigger Binding="{Binding ElementName=MainPanelToggle, Path=IsChecked}" Value="False">
                                                 <DataTrigger.EnterActions>
                                                     <BeginStoryboard>
                                                         <Storyboard>
-                                                            <DoubleAnimation Storyboard.TargetProperty="(FadeImage.ImageOpacityMask).(LinearGradientBrush.GradientStops)[0].Offset"
+                                                            <DoubleAnimation Storyboard.TargetProperty="(Rectangle.Fill).(LinearGradientBrush.GradientStops)[0].Offset"
                                                                              From="0.3" To="0.7" Duration="0:0:0.5" />
                                                         </Storyboard>
                                                     </BeginStoryboard>
@@ -41,7 +47,7 @@
                                                 <DataTrigger.ExitActions>
                                                     <BeginStoryboard>
                                                         <Storyboard>
-                                                            <DoubleAnimation Storyboard.TargetProperty="(FadeImage.ImageOpacityMask).(LinearGradientBrush.GradientStops)[0].Offset"
+                                                            <DoubleAnimation Storyboard.TargetProperty="(Rectangle.Fill).(LinearGradientBrush.GradientStops)[0].Offset"
                                                                              From="0.7" To="0.3" Duration="0:0:0.5" />
                                                         </Storyboard>
                                                     </BeginStoryboard>
@@ -49,8 +55,14 @@
                                             </DataTrigger>
                                         </Style.Triggers>
                                     </Style>
-                                </FadeImage.Style>
-                            </FadeImage>
+                                </Rectangle.Style>
+                                <Rectangle.Fill>
+                                    <LinearGradientBrush StartPoint="0.0, 0.0" EndPoint="0.0, 1.0">
+                                        <GradientStop Color="{DynamicResource TransparentColor}" Offset="0.3" />
+                                        <GradientStop Color="Black" Offset="1" />
+                                    </LinearGradientBrush>
+                                </Rectangle.Fill>
+                            </Rectangle>
 
                             <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top"
                                         Tag="{DynamicResource ShowFavButton}">
@@ -74,7 +86,7 @@
                                 </StackPanel.Style>
                             </StackPanel>
 
-                            <Grid x:Name="OverlayBanner" Panel.ZIndex="1000"
+                            <Grid x:Name="OverlayBanner"
                                   HorizontalAlignment="Right" VerticalAlignment="Top"
                                   Margin="0,10,0,0"
                                   Tag="{DynamicResource DetailsViewShowBanner}">

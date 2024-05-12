@@ -32,6 +32,7 @@
     <Color x:Key="PanelSeparatorColor">#455aa3</Color>
     <Color x:Key="WindowPanelSeparatorColor">#3355CDFF</Color>
     <Color x:Key="DataChangeNotifColor">#ffa500</Color>
+    <Color x:Key="TransparentColor">#00000000</Color>
 
     <SolidColorBrush x:Key="ControlBackgroundBrush" Color="Transparent" />
     <SolidColorBrush x:Key="TextBrush" Color="{DynamicResource TextColor}" />
@@ -80,6 +81,7 @@
     <sys:Boolean x:Key="DetailsViewShowLogo">true</sys:Boolean>
     <sys:Boolean x:Key="DetailsViewShowTitle">true</sys:Boolean>
     <sys:Boolean x:Key="DetailsViewShowCover">true</sys:Boolean>
+    <sys:Boolean x:Key="DetailsViewFadeImage">true</sys:Boolean>
     <sys:Boolean x:Key="DetailsViewShowBanner">true</sys:Boolean>
     <sys:Boolean x:Key="GridViewShowLogo">true</sys:Boolean>
     <sys:Boolean x:Key="GridViewShowBanner">true</sys:Boolean>

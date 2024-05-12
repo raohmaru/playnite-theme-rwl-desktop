@@ -3,6 +3,7 @@ Constants:
     - ShowButtonEditGame: 'Show Edit Game button'
     - "Details View"
     - DetailsViewShowCover: 'Show game cover'
+    - DetailsViewFadeImage: 'Gradient over bg image'
     - "Grid View Details"
     - "Extension: Theme Extras"
     - ShowFavButton: 'Show favourites button'
